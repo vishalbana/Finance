@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New User
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="Confirm Password" type="password">
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+    <div>
+        <script>
+            function checkFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                    x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
+        </script>
+        <input type="checkbox" onclick="checkFunction()"> Show Password
+        </div>
+    <!--</div>
+    <div>
+    <br>
+    <button class="btn btn-primary" type="register">Register</button>
+    </div>!-->
+    </form>
+{% endblock %}
