@@ -1,12 +1,10 @@
 import os
-
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 import datetime
-
 from helpers import apology, login_required, lookup, usd
 
 # Configure application
@@ -233,3 +231,5 @@ def sell():
         db.execute("INSERT INTO transactions(user_id, name, shares, price, type, symbol, time) VALUES(?, ?, ?, ?, ?, ?, ?)", user_id, stock_name, -shares, stock_price, 'Sell', symbol, date_time)
         flash("Transaction Completed Successfully!")
         return redirect("/")
+
+#end
